@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blq7xks3bvnvc" path="res://sprites/firefighter.png" id="1_7tw2i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pshym"]
-height = 38.0
+radius = 8.0
 
 [node name="Firefighter" type="CharacterBody2D"]
 script = ExtResource("1_3hqrn")
@@ -15,5 +15,5 @@ metadata/_edit_horizontal_guides_ = [-20.0, 24.0]
 texture = ExtResource("1_7tw2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_pshym")
