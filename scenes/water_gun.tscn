@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://byjxamy44s2iy"]
+
+[ext_resource type="Script" uid="uid://bhygnoex3d0li" path="res://scripts/water_gun.gd" id="1_dbagk"]
+[ext_resource type="Texture2D" uid="uid://d30jtcgpbymjx" path="res://sprites/watergun.png" id="2_qtwjw"]
+
+[sub_resource type="Gradient" id="Gradient_qtwjw"]
+offsets = PackedFloat32Array(0, 0.717391, 1)
+colors = PackedColorArray(0.141176, 0.623529, 0.870588, 1, 0.141176, 0.623529, 0.870588, 1, 1, 1, 1, 1)
+
+[node name="Water Gun" type="Node2D"]
+script = ExtResource("1_dbagk")
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+width = 6.0
+gradient = SubResource("Gradient_qtwjw")
+texture_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(346, 208)
+scale = Vector2(2, 2)
+texture = ExtResource("2_qtwjw")
+
+[node name="Spawn Point" type="Marker2D" parent="Sprite2D"]
+position = Vector2(6, 0)
+scale = Vector2(0.5, 0.5)
