@@ -1,25 +1,56 @@
 extends CharacterBody2D
 
+var UP = Vector2(0, -1)
+var GRAVITY : float = 6500
+var MAXFALLSPEED : float = 750
+var MAXSPEED : float = 620
+var JUMPFORCE : float = 1900
+var ACCEL : float = 80
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+var motion = Vector2()
+
+var facing_right = true
+
+func _ready():
+	pass
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+func _physics_process(delta):
+	motion.y += GRAVITY * delta
+	if motion.y > MAXFALLSPEED:
+		motion.y = MAXFALLSPEED
+	
+	if facing_right == true:
+		$Sprite2D.scale.x = 1
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		$Sprite2D.scale.x = -1
+	
+	motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
+	
+	if Input.is_action_pressed("right"):
+		motion.x = lerp(motion.x, MAXSPEED, 0.45)
+		facing_right = true
+		#$AnimationPlayer.play("walk")
+	elif Input.is_action_pressed("left"):
+		motion.x = lerp(motion.x, -MAXSPEED, 0.45)
+		facing_right = false
+		#$AnimationPlayer.play("walk")
+	else:
+		motion.x = lerp(motion.x, 0.0,0.75)
+		#$AnimationPlayer.play("Idle")
+		
+	if is_on_floor():
+		if Input.is_action_pressed("up"):
+			motion.y = lerp(motion.y, -JUMPFORCE, 0.7)
+	
+	#if !is_on_floor():
+		#if motion.y < 0 :
+			#$AnimationPlayer.play("jump")
+		#elif motion.y > 0:
+			#$AnimationPlayer.play("fall")
+		
+	
+	set_velocity(motion)
+	set_up_direction(UP)
 	move_and_slide()
+	motion = velocity
