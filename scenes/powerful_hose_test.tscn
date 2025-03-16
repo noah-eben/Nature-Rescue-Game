@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://lodo6ysinycu"]
+
+[ext_resource type="PackedScene" uid="uid://chx1cwetvjvyu" path="res://scenes/firefighter.tscn" id="1_8wmtv"]
+[ext_resource type="PackedScene" uid="uid://b8qvugb8f4ram" path="res://scenes/water_gun_two.tscn" id="2_rqh61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5huve"]
+size = Vector2(1151, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hi83"]
+size = Vector2(59, 899)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wmtv"]
+size = Vector2(52, 835)
+
+[node name="Powerful Hose Test" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(554, 496)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(25.5, 32)
+shape = SubResource("RectangleShape2D_5huve")
+
+[node name="Wall 1" type="StaticBody2D" parent="."]
+position = Vector2(554, 268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall 1"]
+position = Vector2(-523.5, -236.5)
+shape = SubResource("RectangleShape2D_7hi83")
+
+[node name="Wall 2" type="StaticBody2D" parent="."]
+position = Vector2(554, 268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall 2"]
+position = Vector2(573, -203.5)
+shape = SubResource("RectangleShape2D_8wmtv")
+
+[node name="Firefighter" parent="." instance=ExtResource("1_8wmtv")]
+position = Vector2(640, 323)
+
+[node name="waterGunTwo" parent="Firefighter" instance=ExtResource("2_rqh61")]
+
+[node name="Camera2D" type="Camera2D" parent="Firefighter"]

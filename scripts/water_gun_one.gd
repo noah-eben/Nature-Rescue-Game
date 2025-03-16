@@ -4,7 +4,6 @@ var droplet = preload("res://scenes/droplet.tscn")
 @onready var line = $Line2D
 @onready var muzzle = $"Sprite2D/Spawn Point"
 
-var mouse_position = null
 var smoothed_mouse_pos: Vector2
 
 var max_points = 250

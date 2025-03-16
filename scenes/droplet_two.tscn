@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://5bxdn0i523bt"]
+
+[ext_resource type="Texture2D" uid="uid://5usu3ntfpgik" path="res://sprites/droplet.png" id="1_1t0i7"]
+[ext_resource type="Script" uid="uid://iqgh1mx3tkk2" path="res://scripts/droplet_two.gd" id="1_tnmy6"]
+
+[node name="Droplet" type="Node2D"]
+script = ExtResource("1_tnmy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1t0i7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(2.3, 2.4)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

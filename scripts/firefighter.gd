@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 var UP = Vector2(0, -1)
-@export var GRAVITY : float = 6500
+@export var GRAVITY : float = 1900
 @export var MAXFALLSPEED : float = 750
-@export var MAXSPEED : float = 620
-@export var JUMPFORCE : float = 1900
-@export var ACCEL : float = 80
+@export var MAXSPEED : float = 240
+@export var JUMPFORCE : float = 2200
+@export var ACCEL : float = 60
 
 var motion = Vector2()
 
@@ -39,9 +39,19 @@ func _physics_process(delta):
 		motion.x = lerp(motion.x, 0.0,0.75)
 		#$AnimationPlayer.play("Idle")
 		
-	if is_on_floor():
-		if Input.is_action_pressed("up"):
-			motion.y = lerp(motion.y, -JUMPFORCE, 0.3)
+	if Input.is_action_pressed("shoot"):
+		var mouse_pos = get_global_mouse_position()
+		var pos = position
+		var shoot_dir = pos - mouse_pos
+		var shoot_dir_normalized = shoot_dir.normalized()
+		print(shoot_dir.normalized())
+		motion = lerp(motion, shoot_dir_normalized * 500, 1)
+		print(motion)
+		
+	
+	#if is_on_floor():
+		#if Input.is_action_pressed("up"):
+			#motion.y = lerp(motion.y, -JUMPFORCE, 0.3)
 	
 	#if !is_on_floor():
 		#if motion.y < 0 :
