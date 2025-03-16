@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8qvugb8f4ram"]
+[gd_scene load_steps=7 format=3 uid="uid://b8qvugb8f4ram"]
 
 [ext_resource type="Script" uid="uid://g1dbff052g51" path="res://scenes/water_gun_two.gd" id="1_hv546"]
-[ext_resource type="Script" uid="uid://c40r3kn8e4e43" path="res://scripts/raycast.gd" id="2_llah7"]
 [ext_resource type="Texture2D" uid="uid://d30jtcgpbymjx" path="res://sprites/watergun.png" id="2_prlqg"]
 [ext_resource type="Texture2D" uid="uid://b123l8aju2535" path="res://sprites/circle.png" id="3_llah7"]
 
@@ -21,7 +20,6 @@ script = ExtResource("1_hv546")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(600, 0)
 collide_with_areas = true
-script = ExtResource("2_llah7")
 
 [node name="Line2D" type="Line2D" parent="RayCast2D"]
 points = PackedVector2Array(0, 0, 100, 0)
@@ -29,6 +27,7 @@ width = 8.0
 default_color = Color(0.141176, 0.623529, 0.870588, 1)
 
 [node name="Particles" type="CPUParticles2D" parent="RayCast2D"]
+z_index = -1
 emitting = false
 texture = ExtResource("3_llah7")
 lifetime = 0.15
@@ -41,6 +40,7 @@ color_ramp = SubResource("Gradient_2pwai")
 color_initial_ramp = SubResource("Gradient_2i20j")
 
 [node name="Particles2" type="CPUParticles2D" parent="RayCast2D"]
+z_index = -1
 emitting = false
 amount = 18
 texture = ExtResource("3_llah7")

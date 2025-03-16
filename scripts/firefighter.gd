@@ -6,6 +6,7 @@ var UP = Vector2(0, -1)
 @export var MAXSPEED : float = 240
 @export var JUMPFORCE : float = 2200
 @export var ACCEL : float = 60
+@export var WATERJETFORCE: float = 100
 
 var motion = Vector2()
 
@@ -45,7 +46,8 @@ func _physics_process(delta):
 		var pos = position
 		var shoot_dir = pos - mouse_pos
 		var shoot_dir_normalized = shoot_dir.normalized()
-		motion = lerp(motion, shoot_dir_normalized * 500, 1)
+		motion = lerp(motion, shoot_dir_normalized * WATERJETFORCE, 1)
+		
 		
 	
 	#if is_on_floor():
