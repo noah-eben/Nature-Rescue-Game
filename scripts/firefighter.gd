@@ -12,6 +12,7 @@ var motion = Vector2()
 var facing_right = true
 
 func _ready():
+	#print(name)
 	pass
 
 
@@ -44,9 +45,7 @@ func _physics_process(delta):
 		var pos = position
 		var shoot_dir = pos - mouse_pos
 		var shoot_dir_normalized = shoot_dir.normalized()
-		print(shoot_dir.normalized())
 		motion = lerp(motion, shoot_dir_normalized * 500, 1)
-		print(motion)
 		
 	
 	#if is_on_floor():

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwqgkxp2xnqd0"]
+
+[ext_resource type="PackedScene" uid="uid://b8qvugb8f4ram" path="res://scenes/water_gun_two.tscn" id="1_trb4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o4yu"]
+size = Vector2(20, 156)
+
+[node name="Laser Test" type="Node2D"]
+
+[node name="waterGunTwo" parent="." instance=ExtResource("1_trb4j")]
+position = Vector2(256, 185)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(708, 179)
+shape = SubResource("RectangleShape2D_5o4yu")

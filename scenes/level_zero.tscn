@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://canc6eqk7dls7"]
+[gd_scene load_steps=10 format=4 uid="uid://canc6eqk7dls7"]
 
 [ext_resource type="Texture2D" uid="uid://clssvmukxyme1" path="res://sprites/tilesetThree.png" id="1_6oe1b"]
 [ext_resource type="Texture2D" uid="uid://cfjufiyeltheh" path="res://sprites/tilesetTwo.png" id="1_40n3l"]
 [ext_resource type="Script" uid="uid://b4si8dhg2rbh6" path="res://scripts/camera_2d.gd" id="2_a0gos"]
 [ext_resource type="PackedScene" uid="uid://chx1cwetvjvyu" path="res://scenes/firefighter.tscn" id="2_buf0d"]
+[ext_resource type="PackedScene" uid="uid://b8qvugb8f4ram" path="res://scenes/water_gun_two.tscn" id="5_qnx47"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnx47"]
 texture = ExtResource("1_6oe1b")
@@ -426,3 +427,5 @@ script = ExtResource("2_a0gos")
 
 [node name="Firefighter" parent="." instance=ExtResource("2_buf0d")]
 position = Vector2(368, 153)
+
+[node name="waterGunTwo" parent="Firefighter" instance=ExtResource("5_qnx47")]
