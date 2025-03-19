@@ -17,17 +17,17 @@ func draw_water_stream(delta: float) -> void:
 	beam_particles.position = stream.points[1] * 0.5
 	beam_particles.emission_rect_extents.x = (stream.points[1] - stream.points[0]).length() * 0.5
 	
-	if raycast.is_colliding() and Input.is_action_pressed("shoot"):
+	if raycast.is_colliding() and Input.is_action_pressed("shoot") and Global.water_level > 0:
 		stream.points[1] = cast_point
 		appear()
 		particles.emitting = true
 		beam_particles.emitting = true
-	elif not raycast.is_colliding() and Input.is_action_pressed("shoot"):
+	elif not raycast.is_colliding() and Input.is_action_pressed("shoot") and Global.water_level > 0:
 		stream.points[1] = Vector2(400, 0)
 		appear()
 		particles.emitting = true
 		beam_particles.emitting = true
-	elif Input.is_action_just_released("shoot"):
+	elif Input.is_action_just_released("shoot") or Global.water_level <= 0:
 		disappear()
 		particles.emitting = false
 		beam_particles.emitting = false
@@ -53,6 +53,8 @@ func appear() -> void:
 func disappear() -> void:
 	var tween = create_tween()
 	tween.tween_property(stream, 'width', 0, 0.3)
+
+
 
 #func shootBullets() -> void:
 	#if Input.is_action_just_pressed("shoot"):
