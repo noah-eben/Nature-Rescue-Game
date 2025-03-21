@@ -61,4 +61,4 @@ position = Vector2(368, 176)
 position = Vector2(464, 176)
 
 [node name="Fire5" parent="." instance=ExtResource("12_h6dln")]
-position = Vector2(592, 152)
+position = Vector2(592, 144)

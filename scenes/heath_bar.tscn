@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dojcchtsm8457"]
 
-[ext_resource type="Script" uid="uid://b7o5bid5lkxg3" path="res://scripts/fire_heath_bar.gd" id="1_7usie"]
+[ext_resource type="Script" uid="uid://b7o5bid5lkxg3" path="res://scripts/heath_bar.gd" id="1_7usie"]
 [ext_resource type="Texture2D" uid="uid://wjlamij1yf6e" path="res://sprites/YellowHealthBar.png" id="1_w8p1l"]
 [ext_resource type="Texture2D" uid="uid://c3q8d8vjnj2ei" path="res://sprites/RedHealthBar.png" id="2_lcqkv"]
 
-[node name="Fire Health Bar" type="Node2D"]
+[node name="Health Bar" type="Node2D"]
 script = ExtResource("1_7usie")
 
 [node name="Health Bar" type="TextureProgressBar" parent="."]

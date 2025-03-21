@@ -2,11 +2,26 @@
 
 [ext_resource type="Script" uid="uid://c7cd7f51us11k" path="res://scripts/fire.gd" id="1_xqmqg"]
 [ext_resource type="Texture2D" uid="uid://c1vgryqckl60y" path="res://sprites/fireTwo.png" id="2_g5mbl"]
-[ext_resource type="PackedScene" uid="uid://dojcchtsm8457" path="res://scenes/fire_heath_bar.tscn" id="3_g5mbl"]
+[ext_resource type="PackedScene" uid="uid://dojcchtsm8457" path="res://scenes/heath_bar.tscn" id="3_g5mbl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqmqg"]
 radius = 9.0
 height = 24.0
+
+[sub_resource type="Animation" id="Animation_rach5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_g5mbl"]
 resource_name = "idle"
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0, 4]
-}
-
-[sub_resource type="Animation" id="Animation_rach5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_txieb"]

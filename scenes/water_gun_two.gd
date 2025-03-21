@@ -60,7 +60,6 @@ func put_out_fire(delta) -> void:
 		if raycast.get_collider()!= null and\
 		 raycast.get_collider().is_in_group("fires"):
 			var fire = raycast.get_collider()
-			if fire.fire_health > 0.0:
-				fire.fire_health = fire.fire_health - delta * 2
-				print(fire.fire_health)
+			if fire.health > 0.0:
+				fire.health = fire.health - delta * 2
 	pass

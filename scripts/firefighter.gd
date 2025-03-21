@@ -1,16 +1,21 @@
 extends CharacterBody2D
 
+@onready var area_2d: Area2D = $Area2D
+@onready var health_bar: Node2D = $"Health Bar"
+const GREEN_HEALTH_BAR = preload("res://sprites/GreenHealthBar.png")
+
 var UP = Vector2(0, -1)
 @export var GRAVITY : float = 1900
 @export var MAXFALLSPEED : float = 750
 @export var MAXSPEED : float = 240
-@export var JUMPFORCE : float = 2200
+@export var JUMPFORCE : float = 2000
 @export var ACCEL : float = 60
 @export var WATERJETFORCE: float = 100
 
 var motion = Vector2()
 
-
+var health = 20
+var is_burning = false
 var facing_right = true
 
 func run_water_timer(delta) -> void:
@@ -18,7 +23,7 @@ func run_water_timer(delta) -> void:
 		Global.water_level = lerp(Global.water_level, (Global.water_level - 2), delta * 2)
 
 func _ready():
-	#print(name)
+	health_bar.health_bar.texture_progress = GREEN_HEALTH_BAR
 	pass
 
 func _physics_process(delta):
@@ -56,12 +61,28 @@ func _physics_process(delta):
 			run_water_timer(delta)
 		
 	
-	#if is_on_floor():
-		#if Input.is_action_pressed("up"):
-			#motion.y = lerp(motion.y, -JUMPFORCE, 0.3)
+	if is_on_floor():
+		if Input.is_action_pressed("up"):
+			motion.y = lerp(motion.y, -JUMPFORCE, 0.3)
 	
 	set_velocity(motion)
 	set_up_direction(UP)
 	move_and_slide()
 	motion = velocity
+	burning(delta)
+
+func burning(delta):
+	if is_burning == true and health > 0:
+		health -= delta * 2
+		print(health)
 	
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print('burning')
+	is_burning = true
+	
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	print('not burning')
+	is_burning = false
