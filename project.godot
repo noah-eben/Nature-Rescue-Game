@@ -30,6 +30,10 @@ window/stretch/scale_mode="integer"
 
 movie_writer/movie_file="C:/Users/noahe/OneDrive/Projects/Godot/nature-rescue-game/Nature-Rescue-Game/recordings/TakeOne.avi"
 
+[global_group]
+
+fires=""
+
 [input]
 
 right={

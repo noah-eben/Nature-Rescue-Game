@@ -36,3 +36,10 @@ func _process(delta: float) -> void:
 	
 	update_trajectory(delta)
 	mouse_follow(delta)
+
+#func shootBullets() -> void:
+	#if Input.is_action_just_pressed("shoot"):
+		#var droplet_instance = DROPLET.instantiate()
+		#get_tree().root.add_child(droplet_instance)
+		#droplet_instance.global_position = global_position
+		#droplet_instance.rotation = rotation

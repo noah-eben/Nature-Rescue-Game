@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=4 uid="uid://dvwr4c7afdm4o"]
+
+[ext_resource type="Shader" uid="uid://cha0vsgy7y1kt" path="res://shaders/water.gdshader" id="1_ouspw"]
+[ext_resource type="Texture2D" uid="uid://cplajpo4dpmcy" path="res://sprites/tilesetFive.png" id="2_4i45j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_puiqx"]
+shader = ExtResource("1_ouspw")
+shader_parameter/scrolling_speed = 0.5
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6dln"]
+texture = ExtResource("2_4i45j")
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/custom_data_0 = "water"
+
+[sub_resource type="TileSet" id="TileSet_i0hcr"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "type"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_h6dln")
+
+[node name="Water" type="TileMapLayer"]
+z_index = 1
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_puiqx")
+tile_map_data = PackedByteArray("AAAVAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAEAAkAAAAAAAAAAAADAAkAAAAAAAAAAAACAAkAAAAAAAAAAAABAAkAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_i0hcr")

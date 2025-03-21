@@ -51,8 +51,9 @@ func _physics_process(delta):
 		var shoot_dir = pos - mouse_pos
 		var shoot_dir_normalized = shoot_dir.normalized()
 		motion.x = lerp(motion.x, shoot_dir_normalized.x * WATERJETFORCE, 1)
-		motion.y = lerp(motion.y, (shoot_dir_normalized.y * WATERJETFORCE) + (GRAVITY * delta), 1)
-		run_water_timer(delta)
+		if position.y > 50:
+			motion.y = lerp(motion.y, (shoot_dir_normalized.y * WATERJETFORCE) + (GRAVITY * delta), 1)
+			run_water_timer(delta)
 		
 	
 	#if is_on_floor():
@@ -63,3 +64,4 @@ func _physics_process(delta):
 	set_up_direction(UP)
 	move_and_slide()
 	motion = velocity
+	

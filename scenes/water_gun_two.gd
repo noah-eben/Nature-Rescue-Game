@@ -41,7 +41,8 @@ func _physics_process(delta: float) -> void:
 		scale.y = -1
 	else:
 		scale.y = 1
-		
+	
+	put_out_fire(delta)
 	draw_water_stream(delta)
 
 # Make laser appear
@@ -54,11 +55,12 @@ func disappear() -> void:
 	var tween = create_tween()
 	tween.tween_property(stream, 'width', 0, 0.3)
 
-
-
-#func shootBullets() -> void:
-	#if Input.is_action_just_pressed("shoot"):
-		#var droplet_instance = DROPLET.instantiate()
-		#get_tree().root.add_child(droplet_instance)
-		#droplet_instance.global_position = global_position
-		#droplet_instance.rotation = rotation
+func put_out_fire(delta) -> void:
+	if Input.is_action_pressed("shoot"):
+		if raycast.get_collider()!= null and\
+		 raycast.get_collider().is_in_group("fires"):
+			var fire = raycast.get_collider()
+			if fire.fire_health > 0.0:
+				fire.fire_health = fire.fire_health - delta * 2
+				print(fire.fire_health)
+	pass

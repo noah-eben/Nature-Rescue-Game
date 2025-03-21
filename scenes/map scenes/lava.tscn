@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=4 uid="uid://by1gmhbr55nhb"]
+
+[ext_resource type="Shader" uid="uid://cwvqlsgr3fd7o" path="res://shaders/lava.gdshader" id="1_lrlva"]
+[ext_resource type="Texture2D" uid="uid://b0kvuiug8xa2y" path="res://sprites/tilesetFour.png" id="2_vxlbd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4pbeq"]
+shader = ExtResource("1_lrlva")
+shader_parameter/scrolling_speed = 0.2
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_puiqx"]
+texture = ExtResource("2_vxlbd")
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/custom_data_0 = "lava"
+
+[sub_resource type="TileSet" id="TileSet_h6dln"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "type"
+custom_data_layer_0/type = 4
+sources/4 = SubResource("TileSetAtlasSource_puiqx")
+
+[node name="Lava" type="TileMapLayer"]
+z_index = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_4pbeq")
+tile_map_data = PackedByteArray("AAAkAAgABAAAAAAAAAAjAAgABAAAAAAAAAAiAAgABAAAAAAAAAAhAAgABAAAAAAAAAAgAAgABAAAAAAAAAAfAAgABAAAAAAAAAAeAAgABAAAAAAAAAAdAAgABAAAAAAAAAAcAAgABAAAAAAAAAAbAAgABAAAAAAAAAAaAAgABAAAAAAAAAAZAAgABAAAAAAAAAAYAAgABAAAAAAAAAAXAAgABAAAAAAAAAAWAAgABAAAAAAAAAAVAAgABAAAAAAAAAAUAAgABAAAAAAAAAAQAAgABAAAAAAAAAAPAAgABAAAAAAAAAAOAAgABAAAAAAAAAANAAgABAAAAAAAAAAMAAgABAAAAAAAAAALAAgABAAAAAAAAAAKAAgABAAAAAAAAAAJAAgABAAAAAAAAAAqAAgABAAAAAAAAAArAAgABAAAAAAAAAAsAAgABAAAAAAAAAAtAAgABAAAAAAAAAAuAAgABAAAAAAAAAAvAAgABAAAAAAAAAAwAAgABAAAAAAAAAAxAAgABAAAAAAAAAAyAAgABAAAAAAAAAAzAAgABAAAAAAAAAA0AAgABAAAAAAAAAA1AAgABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_h6dln")
