@@ -6,9 +6,12 @@ var DROPLET = preload("res://scenes/droplet_two.tscn")
 @onready var stream: Line2D = $RayCast2D/Line2D
 @onready var particles: CPUParticles2D = $RayCast2D/Particles
 @onready var beam_particles: CPUParticles2D = $RayCast2D/Particles2
+@onready var player = get_parent()
 
 func _ready() -> void:
 	stream.points[1] = Vector2.ZERO
+	
+	
 
 func draw_water_stream(delta: float) -> void:
 	particles.position = stream.points[1]
@@ -42,8 +45,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		scale.y = 1
 	
-	put_out_fire(delta)
-	draw_water_stream(delta)
+	if player.is_alive == true:
+		put_out_fire(delta)
+		draw_water_stream(delta)
+	elif player.is_alive == false:
+		hide()
 
 # Make laser appear
 func appear() -> void:

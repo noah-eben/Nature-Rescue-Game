@@ -47,6 +47,7 @@ _data = {
 }
 
 [node name="Fire" type="Area2D" groups=["fires"]]
+z_index = -1
 script = ExtResource("1_xqmqg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
