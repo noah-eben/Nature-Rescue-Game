@@ -30,7 +30,7 @@ func draw_water_stream(delta: float) -> void:
 		appear()
 		particles.emitting = true
 		beam_particles.emitting = true
-	elif Input.is_action_just_released("shoot") or Global.water_level <= 0:
+	elif not Input.is_action_pressed("shoot") or Input.is_action_just_released("shoot") or Global.water_level <= 0:
 		disappear()
 		particles.emitting = false
 		beam_particles.emitting = false

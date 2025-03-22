@@ -1,7 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://chx1cwetvjvyu"]
+[gd_scene load_steps=29 format=3 uid="uid://chx1cwetvjvyu"]
 
 [ext_resource type="Script" uid="uid://c0skma08wdvne" path="res://scripts/firefighter.gd" id="1_3hqrn"]
-[ext_resource type="Texture2D" uid="uid://blq7xks3bvnvc" path="res://sprites/firefighter.png" id="1_7tw2i"]
 [ext_resource type="Texture2D" uid="uid://brnb353mv7c2d" path="res://sprites/firefighterTwo.png" id="2_k8grl"]
 [ext_resource type="PackedScene" uid="uid://dojcchtsm8457" path="res://scenes/heath_bar.tscn" id="3_pshym"]
 
@@ -189,10 +188,6 @@ position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_o8ydc")
 animation = &"burnt"
 frame_progress = 0.990787
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_7tw2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)

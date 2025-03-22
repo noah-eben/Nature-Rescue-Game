@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw2ljfkmiu51g"]
+
+[ext_resource type="Script" uid="uid://bt1nvmxn04kvp" path="res://scripts/fire_level_gate.gd" id="1_ljr8v"]
+[ext_resource type="Texture2D" uid="uid://dsl07gjvmhcur" path="res://sprites/fireThree.png" id="2_w60j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08cow"]
+size = Vector2(20, 16)
+
+[sub_resource type="Animation" id="Animation_rach5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_g5mbl"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txieb"]
+_data = {
+&"RESET": SubResource("Animation_rach5"),
+&"idle": SubResource("Animation_g5mbl")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljr8v"]
+size = Vector2(9, 26)
+
+[node name="Fire Level Gate" type="Area2D"]
+z_index = -1
+script = ExtResource("1_ljr8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w60j4")
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_08cow")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_txieb")
+}
+autoplay = "idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5.5, 3)
+shape = SubResource("RectangleShape2D_ljr8v")

@@ -7,12 +7,17 @@ class_name World
 @onready var firefighter: CharacterBody2D = $Firefighter
 @onready var start_position: Marker2D = $"Start Position"
 
+@onready var fire_level_gate: Area2D = $"Fire Level Gate"
+@onready var camera_2d: Camera2D = $Camera2D
+@onready var time_to_leave = false
+
 @onready var fire_gui: Control = $"CanvasLayer/Fire GUI"
 @onready var fires = get_tree().get_nodes_in_group("fires")
-@onready var number_of_fires = 0
+@onready var number_of_fires : int
 
 func _ready() -> void:
-	firefighter.position = start_position.position
+	#firefighter.position = start_position.position
+	pass
 
 func fire_is_visible(fire):
 	return fire.visible == true
@@ -21,11 +26,31 @@ func _physics_process(delta: float) -> void:
 	number_of_fires = fires.filter(fire_is_visible).size()
 	fire_gui.get_node("Label").text = str("Fires left: ", number_of_fires)
 	
+	if number_of_fires == 0:
+		if fire_level_gate:
+			#fire_level_gate.queue_free()
+			pass
+	
 	check_cells(delta)
+	show_gate(delta)
 	
 	if Input.is_physical_key_pressed(KEY_R):
 		revive_player()
- 
+
+func show_gate(delta):
+	if number_of_fires == 0 and time_to_leave == false:
+		firefighter.process_mode = Node.PROCESS_MODE_DISABLED
+		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED
+		var tween = create_tween()
+		tween.tween_property(camera_2d, "position", fire_level_gate.position, 3.0)
+		
+		tween.tween_property(fire_level_gate, 'position', fire_level_gate.position + Vector2(0, 200), 1.0 )
+		
+		tween.tween_property(camera_2d, "position", firefighter.position, 3.0)
+		
+		tween.tween_property(camera_2d, "process_mode", Node.PROCESS_MODE_INHERIT, 0.2)
+		tween.tween_property(firefighter, "process_mode", Node.PROCESS_MODE_INHERIT, 2.0)
+		time_to_leave = true
 func check_cells(delta):
 	if lava:
 		var current_cell = lava.local_to_map(firefighter.position - Vector2(0, 16))
@@ -44,6 +69,8 @@ func check_cells(delta):
 
 func revive_player():
 	_ready()
+	fire_level_gate.reset_fire()
+	Global.water_level = 100
 	firefighter.reset_firefighter()
 	
 	for fire in fires:
