@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://canc6eqk7dls7"]
+[gd_scene load_steps=12 format=3 uid="uid://canc6eqk7dls7"]
 
 [ext_resource type="Script" uid="uid://x7m41miqbvm6" path="res://scenes/level_zero.gd" id="1_0lbt8"]
 [ext_resource type="PackedScene" uid="uid://ceaeb2bwd3ro8" path="res://scenes/map scenes/sky.tscn" id="2_4pbeq"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dvwr4c7afdm4o" path="res://scenes/map scenes/water.tscn" id="4_h6dln"]
 [ext_resource type="PackedScene" uid="uid://dfyifl36m4wa3" path="res://scenes/map scenes/surfaces.tscn" id="5_i0hcr"]
 [ext_resource type="PackedScene" uid="uid://b8qvugb8f4ram" path="res://scenes/water_gun_two.tscn" id="5_qnx47"]
+[ext_resource type="PackedScene" uid="uid://vw8np4chrqat" path="res://scenes/fire_gui.tscn" id="11_puiqx"]
 [ext_resource type="PackedScene" uid="uid://hbol6nbvti6e" path="res://scenes/fire.tscn" id="12_h6dln"]
 
 [node name="Level Zero" type="Node2D"]
@@ -47,6 +48,8 @@ offset_top = -48.0
 offset_right = 79.0
 offset_bottom = 48.0
 grow_vertical = 2
+
+[node name="Fire GUI" parent="CanvasLayer" instance=ExtResource("11_puiqx")]
 
 [node name="Fire" parent="." instance=ExtResource("12_h6dln")]
 position = Vector2(784, 112)
