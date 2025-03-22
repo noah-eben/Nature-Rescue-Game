@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://canc6eqk7dls7"]
+[gd_scene load_steps=14 format=4 uid="uid://canc6eqk7dls7"]
 
 [ext_resource type="Script" uid="uid://x7m41miqbvm6" path="res://scenes/level_zero.gd" id="1_0lbt8"]
 [ext_resource type="PackedScene" uid="uid://ceaeb2bwd3ro8" path="res://scenes/map scenes/sky.tscn" id="2_4pbeq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://vw8np4chrqat" path="res://scenes/fire_gui.tscn" id="11_puiqx"]
 [ext_resource type="PackedScene" uid="uid://hbol6nbvti6e" path="res://scenes/fire.tscn" id="12_h6dln"]
 [ext_resource type="PackedScene" uid="uid://bw2ljfkmiu51g" path="res://scenes/fire_level_gate.tscn" id="12_i0hcr"]
+[ext_resource type="PackedScene" uid="uid://df7kjtkskyr0" path="res://scenes/level_exit.tscn" id="13_i0hcr"]
 
 [node name="Level Zero" type="Node2D"]
 script = ExtResource("1_0lbt8")
@@ -34,7 +35,7 @@ editor_draw_limits = true
 script = ExtResource("2_a0gos")
 
 [node name="Firefighter" parent="." instance=ExtResource("2_buf0d")]
-position = Vector2(736, 104)
+position = Vector2(1240, 144)
 
 [node name="waterGunTwo" parent="Firefighter" instance=ExtResource("5_qnx47")]
 position = Vector2(0, -8)
@@ -78,3 +79,6 @@ position = Vector2(184, 240)
 [node name="Fire Level Gate" parent="." instance=ExtResource("12_i0hcr")]
 position = Vector2(1856, 144)
 scale = Vector2(5, 5)
+
+[node name="Level Exit" parent="." instance=ExtResource("13_i0hcr")]
+position = Vector2(1304, 144)

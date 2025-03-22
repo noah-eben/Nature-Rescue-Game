@@ -100,11 +100,13 @@ func reset_firefighter():
 	health = 5
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print('burning')
-	is_burning = true
-	
-
+	if area.is_in_group('fires'):
+		print('burning')
+		is_burning = true
+	else:
+		SceneTransition.change_scene("res://scenes/test_scene_2.tscn")
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	print('not burning')
-	is_burning = false
+	if area.is_in_group('fires'):
+		print('not burning')
+		is_burning = false
