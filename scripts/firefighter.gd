@@ -87,6 +87,14 @@ func dying():
 		is_burning = false
 		is_alive = false
 		animated_sprite_2d.play("burnt")
+		health_bar.visible = false
+		
+
+func revive():
+	is_burning = false
+	is_alive = true
+	animated_sprite_2d.play("default")
+	health_bar.visible = true
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print('burning')

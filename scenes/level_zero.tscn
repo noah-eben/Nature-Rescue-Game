@@ -34,7 +34,7 @@ script = ExtResource("2_a0gos")
 position = Vector2(720, 104)
 
 [node name="waterGunTwo" parent="Firefighter" instance=ExtResource("5_qnx47")]
-position = Vector2(0, 8)
+position = Vector2(0, -8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -6,16 +6,16 @@ class_name World
 
 @onready var firefighter: CharacterBody2D = $Firefighter
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if lava:
-		var current_cell = lava.local_to_map(firefighter.position + Vector2(16,22))
+		var current_cell = lava.local_to_map(firefighter.position - Vector2(0, 16))
 		var data = lava.get_cell_tile_data(current_cell)
 		if data:
 			var tile = data.get_custom_data('type')
 			if tile == 'lava':
-				Global.is_alive = false
+				firefighter.health = 0
 	if water:
-		var current_cell = water.local_to_map(firefighter.position + Vector2(16,22))
+		var current_cell = water.local_to_map(firefighter.position - Vector2(0, 16))
 		var data = water.get_cell_tile_data(current_cell)
 		if data:
 			var tile = data.get_custom_data('type')
