@@ -75,6 +75,9 @@ func _physics_process(delta):
 		motion = velocity
 	burning(delta)
 	dying()
+	
+	#if Input.is_physical_key_pressed(KEY_R):
+		#revive()
 
 func burning(delta):
 	if is_burning == true and health > 0:
@@ -88,13 +91,8 @@ func dying():
 		is_alive = false
 		animated_sprite_2d.play("burnt")
 		health_bar.visible = false
-		
 
-func revive():
-	is_burning = false
-	is_alive = true
-	animated_sprite_2d.play("default")
-	health_bar.visible = true
+
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print('burning')

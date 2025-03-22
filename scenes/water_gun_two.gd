@@ -46,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		scale.y = 1
 	
 	if player.is_alive == true:
+		show()
 		put_out_fire(delta)
 		draw_water_stream(delta)
 	elif player.is_alive == false:

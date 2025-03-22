@@ -62,3 +62,6 @@ position = Vector2(464, 176)
 
 [node name="Fire5" parent="." instance=ExtResource("12_h6dln")]
 position = Vector2(592, 144)
+
+[node name="Start Position" type="Marker2D" parent="."]
+position = Vector2(184, 240)
