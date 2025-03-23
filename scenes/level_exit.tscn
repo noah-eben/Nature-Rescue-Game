@@ -1,16 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://df7kjtkskyr0"]
+[gd_scene load_steps=5 format=3 uid="uid://df7kjtkskyr0"]
+
+[ext_resource type="Shader" uid="uid://dupyhgvavw4sb" path="res://shaders/level_exit.gdshader" id="1_3xln6"]
+[ext_resource type="Texture2D" uid="uid://blumh6st3pgwo" path="res://sprites/arrow.png" id="1_lpw2s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8ilb"]
+shader = ExtResource("1_3xln6")
+shader_parameter/speed = 2.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvabn"]
 size = Vector2(16, 16)
 
 [node name="Level Exit" type="Area2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-color = Color(0.871195, 0.0760989, 0.566516, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_g8ilb")
+position = Vector2(-56, 0)
+texture = ExtResource("1_lpw2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tvabn")

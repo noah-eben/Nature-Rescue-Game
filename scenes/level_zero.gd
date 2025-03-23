@@ -10,12 +10,15 @@ class_name World
 @onready var fire_level_gate: Area2D = $"Fire Level Gate"
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var time_to_leave = false
+@onready var level_exit: Area2D = $"Level Exit"
 
 @onready var fire_gui: Control = $"CanvasLayer/Fire GUI"
 @onready var fires = get_tree().get_nodes_in_group("fires")
 @onready var number_of_fires : int
 
 func _ready() -> void:
+	level_exit.monitorable = false
+	level_exit.visible = false
 	#firefighter.position = start_position.position
 	pass
 
@@ -43,7 +46,8 @@ func show_gate(delta):
 		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED
 		var tween = create_tween()
 		tween.tween_property(camera_2d, "position", fire_level_gate.position, 3.0)
-		
+		level_exit.visible = true
+		level_exit.monitorable = true
 		tween.tween_property(fire_level_gate, 'position', fire_level_gate.position + Vector2(0, 200), 1.0 )
 		
 		tween.tween_property(camera_2d, "position", firefighter.position, 3.0)
@@ -51,6 +55,7 @@ func show_gate(delta):
 		tween.tween_property(camera_2d, "process_mode", Node.PROCESS_MODE_INHERIT, 0.2)
 		tween.tween_property(firefighter, "process_mode", Node.PROCESS_MODE_INHERIT, 2.0)
 		time_to_leave = true
+
 func check_cells(delta):
 	if lava:
 		var current_cell = lava.local_to_map(firefighter.position - Vector2(0, 16))

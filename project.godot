@@ -34,6 +34,7 @@ movie_writer/movie_file="C:/Users/noahe/OneDrive/Projects/Godot/nature-rescue-ga
 [global_group]
 
 fires=""
+exits=""
 
 [input]
 
