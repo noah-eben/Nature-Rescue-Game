@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw2ljfkmiu51g"]
+[gd_scene load_steps=9 format=3 uid="uid://bw2ljfkmiu51g"]
 
 [ext_resource type="Script" uid="uid://bt1nvmxn04kvp" path="res://scripts/fire_level_gate.gd" id="1_ljr8v"]
 [ext_resource type="Texture2D" uid="uid://dsl07gjvmhcur" path="res://sprites/fireThree.png" id="2_w60j4"]
+[ext_resource type="Texture2D" uid="uid://ca13sxs8xmb35" path="res://sprites/lightCircle.png" id="3_w60j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08cow"]
 size = Vector2(20, 16)
@@ -71,3 +72,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(5.5, 3)
 shape = SubResource("RectangleShape2D_ljr8v")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 12)
+texture = ExtResource("3_w60j4")

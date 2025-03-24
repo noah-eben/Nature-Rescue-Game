@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmwamy3n81oxj"]
+
+[ext_resource type="Texture2D" uid="uid://cpe3k6vqqwf31" path="res://sprites/leafTwo.png" id="1_xgx0q"]
+
+[sub_resource type="Curve" id="Curve_oje6f"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -81.9371), 0.0, 0.0, 0, 0, Vector2(1, 201.356), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7mlcl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Falling Leaves" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 10
+texture = ExtResource("1_xgx0q")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(100, 50)
+direction = Vector2(-1, 0)
+gravity = Vector2(-150, 58)
+initial_velocity_min = 140.35
+initial_velocity_max = 163.75
+angular_velocity_min = -193.69
+angular_velocity_max = 16.84
+linear_accel_min = 18.71
+linear_accel_max = 18.71
+angle_max = 58.9
+angle_curve = SubResource("Curve_oje6f")
+scale_amount_curve = SubResource("Curve_7mlcl")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://hbol6nbvti6e"]
+[gd_scene load_steps=9 format=3 uid="uid://hbol6nbvti6e"]
 
 [ext_resource type="Script" uid="uid://c7cd7f51us11k" path="res://scripts/fire.gd" id="1_xqmqg"]
 [ext_resource type="Texture2D" uid="uid://c1vgryqckl60y" path="res://sprites/fireTwo.png" id="2_g5mbl"]
 [ext_resource type="PackedScene" uid="uid://dojcchtsm8457" path="res://scenes/heath_bar.tscn" id="3_g5mbl"]
+[ext_resource type="Texture2D" uid="uid://ca13sxs8xmb35" path="res://sprites/lightCircle.png" id="4_rach5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqmqg"]
 radius = 9.0
@@ -65,3 +66,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_txieb")
 }
 autoplay = "idle"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 12)
+texture = ExtResource("4_rach5")
