@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkqrbjcxwfy2u"]
+
+[ext_resource type="Script" uid="uid://cuv0ti84rb82l" path="res://scripts/player_health_bar.gd" id="1_axbfd"]
+[ext_resource type="Texture2D" uid="uid://ograhunf4so" path="res://sprites/GrayHealthBar.png" id="1_temqn"]
+[ext_resource type="Texture2D" uid="uid://ksopxvxt5kj" path="res://sprites/GreenHealthBarTwo.png" id="2_orymg"]
+[ext_resource type="Texture2D" uid="uid://cdlct4bvk455o" path="res://sprites/firefighterHead.png" id="4_576rc"]
+
+[node name="Player Health Bar" type="TextureProgressBar"]
+texture_filter = 1
+offset_right = 112.0
+offset_bottom = 40.0
+texture_under = ExtResource("1_temqn")
+texture_progress = ExtResource("2_orymg")
+script = ExtResource("1_axbfd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -36.0
+offset_top = -29.0
+offset_right = 15.0
+offset_bottom = 22.0
+texture = ExtResource("4_576rc")
+stretch_mode = 2

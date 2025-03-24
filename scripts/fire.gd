@@ -11,6 +11,6 @@ func _physics_process(delta: float) -> void:
 		collision_shape_2d.set_deferred('disabled', true)
 
 func reset_fire():
-	health = 2.0
+	health = 0.5
 	visible = true
 	collision_shape_2d.set_deferred('disabled', false)

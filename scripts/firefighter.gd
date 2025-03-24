@@ -16,7 +16,7 @@ var UP = Vector2(0, -1)
 
 var motion = Vector2()
 
-var health = 5
+var health = 100
 var is_burning = false
 var is_alive = true
 var facing_right = true

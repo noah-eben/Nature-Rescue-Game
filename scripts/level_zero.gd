@@ -13,13 +13,15 @@ class_name World
 @onready var level_exit: Area2D = $"Level Exit"
 
 @onready var fire_gui: Control = $"CanvasLayer/Fire GUI"
+@onready var fire_gui_two: Control = $"CanvasLayer/Fire GUI Two"
 @onready var fires = get_tree().get_nodes_in_group("fires")
-@onready var number_of_fires : int
+@onready var number_of_fires : int = fires.filter(fire_is_visible).size()
+@onready var total_number_of_fires : int = fires.size()
 
 func _ready() -> void:
 	level_exit.monitorable = false
 	level_exit.visible = false
-	#firefighter.position = start_position.position
+	firefighter.position = start_position.position
 	pass
 
 func fire_is_visible(fire):
@@ -27,18 +29,14 @@ func fire_is_visible(fire):
 
 func _physics_process(delta: float) -> void:
 	number_of_fires = fires.filter(fire_is_visible).size()
-	fire_gui.get_node("Label").text = str("Fires left: ", number_of_fires)
-	
-	if number_of_fires == 0:
-		if fire_level_gate:
-			#fire_level_gate.queue_free()
-			pass
+	fire_gui.get_node("Label").text = str("Fires: ",number_of_fires, "/", total_number_of_fires)
 	
 	check_cells(delta)
 	show_gate(delta)
 	
 	if Input.is_physical_key_pressed(KEY_R):
-		revive_player()
+		#revive_player()
+		get_tree().reload_current_scene()
 
 func show_gate(delta):
 	if number_of_fires == 0 and time_to_leave == false:
@@ -73,7 +71,6 @@ func check_cells(delta):
 				Global.water_level = 100
 
 func revive_player():
-	_ready()
 	fire_level_gate.reset_fire()
 	Global.water_level = 100
 	firefighter.reset_firefighter()
