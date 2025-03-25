@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvqyuobay5uub"]
+
+[ext_resource type="Texture2D" uid="uid://dicngk5f2c0kk" path="res://sprites/volcanoBackground.png" id="1_vf4sm"]
+
+[node name="Volcanic Background" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+z_index = 1
+position = Vector2(488, 152)
+texture = ExtResource("1_vf4sm")

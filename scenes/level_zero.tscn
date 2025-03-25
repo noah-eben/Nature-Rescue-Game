@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://canc6eqk7dls7"]
+[gd_scene load_steps=19 format=4 uid="uid://canc6eqk7dls7"]
 
 [ext_resource type="Script" uid="uid://x7m41miqbvm6" path="res://scripts/level_zero.gd" id="1_0lbt8"]
 [ext_resource type="PackedScene" uid="uid://ceaeb2bwd3ro8" path="res://scenes/map scenes/sky.tscn" id="2_4pbeq"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bw2ljfkmiu51g" path="res://scenes/fire_level_gate.tscn" id="12_i0hcr"]
 [ext_resource type="PackedScene" uid="uid://df7kjtkskyr0" path="res://scenes/level_exit.tscn" id="13_i0hcr"]
 [ext_resource type="PackedScene" uid="uid://dmwamy3n81oxj" path="res://scenes/falling_leaves.tscn" id="16_mp3r7"]
+[ext_resource type="PackedScene" uid="uid://dvqyuobay5uub" path="res://scenes/volcanic_background.tscn" id="17_m3fo7"]
 
 [sub_resource type="Environment" id="Environment_mp3r7"]
 background_mode = 3
@@ -28,6 +29,8 @@ glow_hdr_threshold = 1.5
 script = ExtResource("1_0lbt8")
 
 [node name="Sky" parent="." instance=ExtResource("2_4pbeq")]
+visible = false
+z_index = -4
 
 [node name="Lava" parent="." instance=ExtResource("3_puiqx")]
 
@@ -66,25 +69,20 @@ grow_vertical = 2
 
 [node name="Fire GUI" parent="CanvasLayer" instance=ExtResource("11_puiqx")]
 visible = false
-offset_left = 480.0
-offset_top = 16.0
-offset_right = 480.0
-offset_bottom = 16.0
-
-[node name="Player Health Bar" parent="CanvasLayer" instance=ExtResource("11_2cghs")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -89.5
+anchor_bottom = 0.0
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player Health Bar" parent="CanvasLayer" instance=ExtResource("11_2cghs")]
 offset_top = 32.0
-offset_right = 89.5
 offset_bottom = 72.0
-grow_horizontal = 2
 
 [node name="Fire GUI Two" parent="CanvasLayer" instance=ExtResource("12_11olo")]
 
 [node name="Fire" parent="." instance=ExtResource("12_h6dln")]
-visible = false
 position = Vector2(784, 112)
 
 [node name="Fire2" parent="." instance=ExtResource("12_h6dln")]
@@ -92,9 +90,11 @@ visible = false
 position = Vector2(624, 112)
 
 [node name="Fire3" parent="." instance=ExtResource("12_h6dln")]
+visible = false
 position = Vector2(368, 176)
 
 [node name="Fire4" parent="." instance=ExtResource("12_h6dln")]
+visible = false
 position = Vector2(464, 176)
 
 [node name="Fire5" parent="." instance=ExtResource("12_h6dln")]
@@ -130,3 +130,5 @@ position = Vector2(1648, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mp3r7")
+
+[node name="Volcanic Background" parent="." instance=ExtResource("17_m3fo7")]

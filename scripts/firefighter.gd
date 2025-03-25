@@ -100,7 +100,7 @@ func reset_firefighter():
 	health = 5
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group('fires'):
+	if area.is_in_group('fires') and area.visible == true:
 		print('burning')
 		is_burning = true
 	elif area.is_in_group('exits'):

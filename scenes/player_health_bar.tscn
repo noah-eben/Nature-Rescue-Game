@@ -7,8 +7,14 @@
 
 [node name="Player Health Bar" type="TextureProgressBar"]
 texture_filter = 1
-offset_right = 112.0
-offset_bottom = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 51.0
+offset_right = 89.5
+offset_bottom = 91.0
+grow_horizontal = 2
 texture_under = ExtResource("1_temqn")
 texture_progress = ExtResource("2_orymg")
 script = ExtResource("1_axbfd")
