@@ -10,7 +10,7 @@ var UP = Vector2(0, -1)
 @export var GRAVITY : float = 1900
 @export var MAXFALLSPEED : float = 750
 @export var MAXSPEED : float = 240
-@export var JUMPFORCE : float = 2000
+@export var JUMPFORCE : float = 2200
 @export var ACCEL : float = 60
 @export var WATERJETFORCE: float = 100
 
@@ -104,7 +104,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		print('burning')
 		is_burning = true
 	elif area.is_in_group('exits'):
-		SceneTransition.change_scene("res://scenes/test_scene_2.tscn")
+		#SceneTransition.change_scene("res://scenes/test_scene_2.tscn")
+		SceneTransition.change_scene(get_parent().next_scene)
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group('fires'):

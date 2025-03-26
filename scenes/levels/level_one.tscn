@@ -1,22 +1,21 @@
-[gd_scene load_steps=19 format=4 uid="uid://canc6eqk7dls7"]
+[gd_scene load_steps=18 format=4 uid="uid://rrvd0ydu0md4"]
 
-[ext_resource type="Script" uid="uid://x7m41miqbvm6" path="res://scripts/level_zero.gd" id="1_0lbt8"]
-[ext_resource type="PackedScene" uid="uid://ceaeb2bwd3ro8" path="res://scenes/map scenes/sky.tscn" id="2_4pbeq"]
-[ext_resource type="Script" uid="uid://b4si8dhg2rbh6" path="res://scripts/camera_2d.gd" id="2_a0gos"]
-[ext_resource type="PackedScene" uid="uid://chx1cwetvjvyu" path="res://scenes/firefighter.tscn" id="2_buf0d"]
-[ext_resource type="PackedScene" uid="uid://by1gmhbr55nhb" path="res://scenes/map scenes/lava.tscn" id="3_puiqx"]
-[ext_resource type="PackedScene" uid="uid://cvt6ta11tjxli" path="res://scenes/water_level_display.tscn" id="4_7dtwl"]
-[ext_resource type="PackedScene" uid="uid://dvwr4c7afdm4o" path="res://scenes/map scenes/water.tscn" id="4_h6dln"]
-[ext_resource type="PackedScene" uid="uid://dfyifl36m4wa3" path="res://scenes/map scenes/surfaces.tscn" id="5_i0hcr"]
-[ext_resource type="PackedScene" uid="uid://b8qvugb8f4ram" path="res://scenes/water_gun_two.tscn" id="5_qnx47"]
-[ext_resource type="PackedScene" uid="uid://dkqrbjcxwfy2u" path="res://scenes/player_health_bar.tscn" id="11_2cghs"]
-[ext_resource type="PackedScene" uid="uid://vw8np4chrqat" path="res://scenes/fire_gui.tscn" id="11_puiqx"]
-[ext_resource type="PackedScene" uid="uid://da18aka72s2f1" path="res://scenes/fire_gui_two.tscn" id="12_11olo"]
-[ext_resource type="PackedScene" uid="uid://hbol6nbvti6e" path="res://scenes/fire.tscn" id="12_h6dln"]
-[ext_resource type="PackedScene" uid="uid://bw2ljfkmiu51g" path="res://scenes/fire_level_gate.tscn" id="12_i0hcr"]
-[ext_resource type="PackedScene" uid="uid://df7kjtkskyr0" path="res://scenes/level_exit.tscn" id="13_i0hcr"]
-[ext_resource type="PackedScene" uid="uid://dmwamy3n81oxj" path="res://scenes/falling_leaves.tscn" id="16_mp3r7"]
-[ext_resource type="PackedScene" uid="uid://dvqyuobay5uub" path="res://scenes/volcanic_background.tscn" id="17_m3fo7"]
+[ext_resource type="Script" uid="uid://cba43jm13t61o" path="res://scripts/level_one.gd" id="1_47t11"]
+[ext_resource type="PackedScene" uid="uid://ceaeb2bwd3ro8" path="res://scenes/map scenes/trees.tscn" id="2_vqfyt"]
+[ext_resource type="PackedScene" uid="uid://by1gmhbr55nhb" path="res://scenes/map scenes/lava.tscn" id="3_c8ept"]
+[ext_resource type="PackedScene" uid="uid://dvwr4c7afdm4o" path="res://scenes/map scenes/water.tscn" id="4_o3b5w"]
+[ext_resource type="PackedScene" uid="uid://dfyifl36m4wa3" path="res://scenes/map scenes/surfaces.tscn" id="5_4tnms"]
+[ext_resource type="Script" uid="uid://b4si8dhg2rbh6" path="res://scripts/camera_2d.gd" id="6_rq6es"]
+[ext_resource type="PackedScene" uid="uid://chx1cwetvjvyu" path="res://scenes/firefighter.tscn" id="7_72iam"]
+[ext_resource type="PackedScene" uid="uid://b8qvugb8f4ram" path="res://scenes/water_gun_two.tscn" id="8_56ek7"]
+[ext_resource type="PackedScene" uid="uid://cvt6ta11tjxli" path="res://scenes/water_level_display.tscn" id="9_bocsy"]
+[ext_resource type="PackedScene" uid="uid://dkqrbjcxwfy2u" path="res://scenes/player_health_bar.tscn" id="10_wif7p"]
+[ext_resource type="PackedScene" uid="uid://da18aka72s2f1" path="res://scenes/fire_gui_two.tscn" id="11_o7vcp"]
+[ext_resource type="PackedScene" uid="uid://hbol6nbvti6e" path="res://scenes/fire.tscn" id="12_wai4o"]
+[ext_resource type="PackedScene" uid="uid://bw2ljfkmiu51g" path="res://scenes/fire_level_gate.tscn" id="13_jmh75"]
+[ext_resource type="PackedScene" uid="uid://df7kjtkskyr0" path="res://scenes/level_exit.tscn" id="14_p0k5w"]
+[ext_resource type="PackedScene" uid="uid://dmwamy3n81oxj" path="res://scenes/falling_leaves.tscn" id="15_y6o4d"]
+[ext_resource type="PackedScene" uid="uid://dvqyuobay5uub" path="res://scenes/volcanic_background.tscn" id="16_jw5q1"]
 
 [sub_resource type="Environment" id="Environment_mp3r7"]
 background_mode = 3
@@ -25,19 +24,19 @@ glow_enabled = true
 glow_intensity = 0.3
 glow_hdr_threshold = 1.5
 
-[node name="Level Zero" type="Node2D"]
-script = ExtResource("1_0lbt8")
+[node name="Level One" type="Node2D"]
+script = ExtResource("1_47t11")
 
-[node name="Sky" parent="." instance=ExtResource("2_4pbeq")]
-visible = false
+[node name="Trees" parent="." instance=ExtResource("2_vqfyt")]
 z_index = -4
+tile_map_data = PackedByteArray("AAABAAUAAgAAAAEAAAABAAYAAgAAAAIAAAABAAcAAgAAAAMAAAACAAUAAgABAAEAAAACAAYAAgABAAIAAAACAAcAAgABAAMAAAADAAUAAgACAAEAAAADAAYAAgACAAIAAAADAAcAAgACAAMAAAAHAAMAAgAAAAEAAAAHAAQAAgAAAAIAAAAHAAUAAgAAAAMAAAAIAAMAAgABAAEAAAAIAAQAAgABAAIAAAAIAAUAAgABAAMAAAAJAAMAAgACAAEAAAAJAAQAAgACAAIAAAAJAAUAAgACAAMAAAAVAAEAAgAAAAEAAAAVAAIAAgAAAAIAAAAVAAMAAgAAAAMAAAAWAAEAAgABAAEAAAAWAAIAAgABAAIAAAAWAAMAAgABAAMAAAAXAAEAAgACAAEAAAAXAAIAAgACAAIAAAAXAAMAAgACAAMAAAAmAAIAAgAAAAEAAAAmAAMAAgAAAAIAAAAmAAQAAgAAAAMAAAAnAAIAAgABAAEAAAAnAAMAAgABAAIAAAAnAAQAAgABAAMAAAAoAAIAAgACAAEAAAAoAAMAAgACAAIAAAAoAAQAAgACAAMAAAA2AAQAAgAAAAEAAAA2AAUAAgAAAAIAAAA2AAYAAgAAAAMAAAA3AAQAAgABAAEAAAA3AAUAAgABAAIAAAA3AAYAAgABAAMAAAA4AAQAAgACAAEAAAA4AAUAAgACAAIAAAA4AAYAAgACAAMAAAA=")
 
-[node name="Lava" parent="." instance=ExtResource("3_puiqx")]
+[node name="Lava" parent="." instance=ExtResource("3_c8ept")]
 
-[node name="Water" parent="." instance=ExtResource("4_h6dln")]
+[node name="Water" parent="." instance=ExtResource("4_o3b5w")]
 tile_map_data = PackedByteArray("AAAVAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAA=")
 
-[node name="Surfaces" parent="." instance=ExtResource("5_i0hcr")]
+[node name="Surfaces" parent="." instance=ExtResource("5_4tnms")]
 tile_map_data = PackedByteArray("AAAGAAkAAAAKAAAAAAAHAAkAAAAFAAEAAAAIAAkAAAAGAAEAAAACAAoAAAAJAAIAAAADAAoAAAAJAAIAAAAEAAoAAAAJAAIAAAAFAAkAAAAKAAAAAAAFAAoAAAAJAAIAAAABAAoAAAAJAAIAAAAAAAoAAAAIAAEAAAAAAAkAAAAIAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAJAAkAAAAKAAAAAAAKAAkAAAAKAAAAAAALAAkAAAAKAAAAAAAMAAkAAAAKAAAAAAANAAkAAAAKAAAAAAANAAoAAAAJAAIAAAAGAAoAAAAJAAIAAAAHAAoAAAAJAAIAAAAIAAoAAAAJAAIAAAAJAAoAAAAJAAIAAAAKAAoAAAAJAAIAAAALAAoAAAAJAAIAAAAMAAoAAAAJAAIAAAABAAwAAAAJAAMAAAAAAAsAAAAIAAEAAAABAAsAAAAJAAIAAAACAAsAAAAJAAIAAAADAAsAAAAJAAIAAAAEAAsAAAAJAAIAAAAFAAsAAAAJAAIAAAAGAAsAAAAJAAIAAAAHAAsAAAAJAAIAAAAIAAsAAAAJAAIAAAAJAAsAAAAJAAIAAAAKAAsAAAAJAAIAAAALAAsAAAAJAAIAAAAMAAsAAAAJAAIAAAANAAsAAAAJAAIAAAAAAAwAAAAIAAMAAAACAAwAAAAJAAMAAAADAAwAAAAJAAMAAAAEAAwAAAAJAAMAAAAFAAwAAAAJAAMAAAAGAAwAAAAJAAMAAAAIAAwAAAAJAAMAAAAHAAwAAAAJAAMAAAAJAAwAAAAJAAMAAAAKAAwAAAAJAAMAAAALAAwAAAAJAAMAAAAMAAwAAAAJAAMAAAANAAwAAAAJAAMAAAAOAAkAAAAKAAAAAAAPAAkAAAAKAAAAAAAQAAkAAAAKAAAAAAARAAkAAAAFAAEAAAASAAkAAAAJAAIAAAATAAkAAAAGAAEAAAAUAAkAAAAKAAAAAAAVAAkAAAAKAAAAAAAWAAkAAAAKAAAAAAAXAAkAAAAKAAAAAAAYAAkAAAAKAAAAAAAZAAkAAAAKAAAAAAAaAAkAAAAKAAAAAAAbAAkAAAAKAAAAAAAcAAkAAAAKAAAAAAAdAAkAAAAKAAAAAAAeAAkAAAAKAAAAAAAfAAkAAAAKAAAAAAAgAAkAAAAKAAAAAAAhAAkAAAAKAAAAAAAiAAkAAAAKAAAAAAAjAAkAAAAKAAAAAAAkAAkAAAAKAAAAAAAlAAkAAAAFAAEAAAAmAAkAAAAJAAIAAAAnAAkAAAAJAAIAAAAoAAkAAAAJAAIAAAApAAkAAAAGAAEAAAAqAAkAAAAKAAAAAAArAAkAAAAKAAAAAAAsAAkAAAAKAAAAAAAtAAkAAAAKAAAAAAAuAAkAAAAKAAAAAAAvAAkAAAAKAAAAAAAwAAkAAAAKAAAAAAASAAoAAAAJAAIAAAARAAoAAAAJAAIAAAAQAAoAAAAJAAIAAAAPAAoAAAAJAAIAAAAOAAoAAAAJAAIAAAAwAAwAAAAJAAMAAAAwAAsAAAAJAAIAAAAwAAoAAAAJAAIAAAAvAAwAAAAJAAMAAAAvAAsAAAAJAAIAAAAvAAoAAAAJAAIAAAAuAAwAAAAJAAMAAAAuAAsAAAAJAAIAAAAuAAoAAAAJAAIAAAAtAAwAAAAJAAMAAAAtAAsAAAAJAAIAAAAtAAoAAAAJAAIAAAAsAAwAAAAJAAMAAAAsAAsAAAAJAAIAAAAsAAoAAAAJAAIAAAArAAwAAAAJAAMAAAArAAsAAAAJAAIAAAArAAoAAAAJAAIAAAAqAAwAAAAJAAMAAAAqAAsAAAAJAAIAAAAqAAoAAAAJAAIAAAApAAwAAAAJAAMAAAApAAsAAAAJAAIAAAApAAoAAAAJAAIAAAAoAAwAAAAJAAMAAAAoAAsAAAAJAAIAAAAoAAoAAAAJAAIAAAAnAAwAAAAJAAMAAAAnAAsAAAAJAAIAAAAnAAoAAAAJAAIAAAAmAAwAAAAJAAMAAAAmAAsAAAAJAAIAAAAmAAoAAAAJAAIAAAAlAAwAAAAJAAMAAAAlAAsAAAAJAAIAAAAlAAoAAAAJAAIAAAAkAAwAAAAJAAMAAAAkAAsAAAAJAAIAAAAkAAoAAAAJAAIAAAAjAAwAAAAJAAMAAAAjAAsAAAAJAAIAAAAjAAoAAAAJAAIAAAAiAAwAAAAJAAMAAAAiAAsAAAAJAAIAAAAiAAoAAAAJAAIAAAAhAAwAAAAJAAMAAAAhAAsAAAAJAAIAAAAhAAoAAAAJAAIAAAAgAAwAAAAJAAMAAAAgAAsAAAAJAAIAAAAgAAoAAAAJAAIAAAAfAAwAAAAJAAMAAAAfAAsAAAAJAAIAAAAfAAoAAAAJAAIAAAAeAAwAAAAJAAMAAAAeAAsAAAAJAAIAAAAeAAoAAAAJAAIAAAAdAAwAAAAJAAMAAAAdAAsAAAAJAAIAAAAdAAoAAAAJAAIAAAAcAAwAAAAJAAMAAAAcAAsAAAAJAAIAAAAcAAoAAAAJAAIAAAAbAAwAAAAJAAMAAAAbAAsAAAAJAAIAAAAbAAoAAAAJAAIAAAAaAAwAAAAJAAMAAAAaAAsAAAAJAAIAAAAaAAoAAAAJAAIAAAAZAAwAAAAJAAMAAAAZAAsAAAAJAAIAAAAZAAoAAAAJAAIAAAAYAAwAAAAJAAMAAAAYAAsAAAAJAAIAAAAYAAoAAAAJAAIAAAAXAAwAAAAJAAMAAAAXAAsAAAAJAAIAAAAXAAoAAAAJAAIAAAAWAAwAAAAJAAMAAAAWAAsAAAAJAAIAAAAWAAoAAAAJAAIAAAAVAAwAAAAJAAMAAAAVAAsAAAAJAAIAAAAVAAoAAAAJAAIAAAAUAAwAAAAJAAMAAAAUAAsAAAAJAAIAAAAUAAoAAAAJAAIAAAATAAwAAAAJAAMAAAATAAsAAAAJAAIAAAATAAoAAAAJAAIAAAASAAwAAAAJAAMAAAASAAsAAAAJAAIAAAARAAwAAAAJAAMAAAARAAsAAAAJAAIAAAAQAAwAAAAJAAMAAAAQAAsAAAAJAAIAAAAPAAwAAAAJAAMAAAAPAAsAAAAJAAIAAAAOAAwAAAAJAAMAAAAOAAsAAAAJAAIAAAAHAAgAAAAIAAEAAAAHAAcAAAAIAAEAAAAIAAcAAAALAAIAAAAIAAgAAAALAAIAAAAHAAYAAAAIAAAAAAAIAAYAAAALAAAAAAALAAYAAAAAAAMAAAAOAAYAAAAAAAMAAAARAAYAAAABAAAAAAARAAcAAAAAAAEAAAARAAgAAAAEAAEAAAASAAUAAAAIAAAAAAATAAQAAAAAAAAAAAATAAUAAAAHAAEAAAATAAYAAAAEAAAAAAATAAcAAAAAAAEAAAATAAgAAAAHAAEAAAASAAgAAAAKAAAAAAASAAYAAAAFAAMAAAAWAAQAAAABAAAAAAAXAAQAAAACAAMAAAAYAAQAAAADAAMAAAAUAAYAAAACAAMAAAAVAAYAAAACAAMAAAAWAAYAAAACAAIAAAAWAAUAAAAAAAEAAAAXAAYAAAADAAMAAAAfAAQAAAAAAAMAAAAaAAcAAAAAAAMAAAAiAAYAAAAAAAMAAAAlAAUAAAAIAAAAAAAlAAYAAAAIAAEAAAAlAAcAAAAIAAEAAAAlAAgAAAAIAAEAAAAmAAUAAAAKAAAAAAAnAAUAAAAKAAAAAAAoAAUAAAAKAAAAAAApAAUAAAALAAAAAAApAAYAAAALAAIAAAApAAcAAAALAAIAAAApAAgAAAALAAIAAAAoAAgAAAAJAAIAAAAnAAgAAAAJAAIAAAAmAAgAAAAJAAIAAAAmAAcAAAAJAAIAAAAmAAYAAAAJAAIAAAAnAAYAAAAJAAIAAAAoAAYAAAAJAAIAAAAoAAcAAAAJAAIAAAAnAAcAAAAJAAIAAAAxAAkAAAAKAAAAAAAyAAkAAAAKAAAAAAAzAAkAAAAKAAAAAAA0AAkAAAAKAAAAAAA1AAkAAAAKAAAAAAA2AAkAAAAFAAEAAAA2AAoAAAAJAAIAAAA2AAsAAAAJAAIAAAA2AAwAAAAJAAMAAAA1AAwAAAAJAAMAAAA0AAwAAAAJAAMAAAAzAAwAAAAJAAMAAAAyAAwAAAAJAAMAAAAxAAwAAAAJAAMAAAAxAAsAAAAJAAIAAAAxAAoAAAAJAAIAAAA1AAoAAAAJAAIAAAA1AAsAAAAJAAIAAAA0AAsAAAAJAAIAAAAzAAsAAAAJAAIAAAAzAAoAAAAJAAIAAAA0AAoAAAAJAAIAAAAyAAoAAAAJAAIAAAAyAAsAAAAJAAIAAAA3AAkAAAAJAAIAAAA4AAkAAAAJAAIAAAA5AAkAAAAJAAIAAAA5AAoAAAAJAAIAAAA5AAsAAAAJAAIAAAA4AAwAAAAJAAMAAAA3AAwAAAAJAAMAAAA3AAsAAAAJAAIAAAA3AAoAAAAJAAIAAAA4AAoAAAAJAAIAAAA4AAsAAAAJAAIAAAA5AAwAAAAJAAMAAAAtAAcAAAAAAAMAAAAwAAcAAAAAAAMAAAAzAAcAAAAAAAMAAAA2AAcAAAAIAAAAAAA2AAgAAAAIAAEAAAA3AAcAAAAKAAAAAAA4AAcAAAAKAAAAAAA5AAcAAAAKAAAAAAA5AAgAAAAJAAIAAAA4AAgAAAAJAAIAAAA3AAgAAAAJAAIAAAA6AAcAAAAKAAAAAAA6AAgAAAAJAAIAAAA6AAkAAAAJAAIAAAA6AAoAAAAJAAIAAAA6AAsAAAAJAAIAAAA6AAwAAAAJAAMAAAA6AAIAAAABAAIAAAA6AAEAAAAAAAEAAAA6AAAAAAAAAAAAAAA7AAcAAAAKAAAAAAA8AAcAAAAJAAEAAAA8AAgAAAALAAIAAAA8AAkAAAALAAIAAAA8AAoAAAALAAIAAAA8AAsAAAALAAIAAAA8AAwAAAALAAMAAAA7AAwAAAAJAAMAAAA7AAsAAAAJAAIAAAA7AAoAAAAJAAIAAAA7AAkAAAAJAAIAAAA7AAgAAAAJAAIAAAA9AAYAAAALAAIAAAA9AAUAAAALAAIAAAA9AAQAAAALAAIAAAA9AAMAAAALAAIAAAA9AAIAAAALAAAAAAA8AAIAAAAFAAAAAAA7AAIAAAACAAMAAAA8AAMAAAAIAAEAAAA8AAQAAAAIAAEAAAA8AAUAAAAIAAEAAAA8AAYAAAAIAAEAAAA9AAcAAAALAAMAAAABAAkAAAAJAAIAAAACAAkAAAAJAAIAAAADAAkAAAAJAAIAAAAEAAkAAAAGAAEAAAAEAAgAAAALAAAAAAADAAgAAAAKAAAAAAACAAgAAAAKAAAAAAABAAgAAAAKAAAAAAA=")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -47,17 +46,17 @@ limit_top = 0
 limit_right = 1880
 limit_bottom = 400
 editor_draw_limits = true
-script = ExtResource("2_a0gos")
+script = ExtResource("6_rq6es")
 
-[node name="Firefighter" parent="." instance=ExtResource("2_buf0d")]
+[node name="Firefighter" parent="." instance=ExtResource("7_72iam")]
 position = Vector2(104, 184)
 
-[node name="waterGunTwo" parent="Firefighter" instance=ExtResource("5_qnx47")]
+[node name="waterGunTwo" parent="Firefighter" instance=ExtResource("8_56ek7")]
 position = Vector2(0, -8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Water Level Display" parent="CanvasLayer" instance=ExtResource("4_7dtwl")]
+[node name="Water Level Display" parent="CanvasLayer" instance=ExtResource("9_bocsy")]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -67,68 +66,63 @@ offset_right = 79.0
 offset_bottom = 48.0
 grow_vertical = 2
 
-[node name="Fire GUI" parent="CanvasLayer" instance=ExtResource("11_puiqx")]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-grow_vertical = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Player Health Bar" parent="CanvasLayer" instance=ExtResource("11_2cghs")]
+[node name="Player Health Bar" parent="CanvasLayer" instance=ExtResource("10_wif7p")]
 offset_top = 32.0
 offset_bottom = 72.0
 
-[node name="Fire GUI Two" parent="CanvasLayer" instance=ExtResource("12_11olo")]
+[node name="Fire GUI Two" parent="CanvasLayer" instance=ExtResource("11_o7vcp")]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -32.0
+offset_bottom = -32.0
 
-[node name="Fire" parent="." instance=ExtResource("12_h6dln")]
+[node name="Fire" parent="." instance=ExtResource("12_wai4o")]
+visible = false
 position = Vector2(784, 112)
 
-[node name="Fire2" parent="." instance=ExtResource("12_h6dln")]
+[node name="Fire2" parent="." instance=ExtResource("12_wai4o")]
 visible = false
 position = Vector2(624, 112)
 
-[node name="Fire3" parent="." instance=ExtResource("12_h6dln")]
-visible = false
+[node name="Fire3" parent="." instance=ExtResource("12_wai4o")]
 position = Vector2(368, 176)
 
-[node name="Fire4" parent="." instance=ExtResource("12_h6dln")]
+[node name="Fire4" parent="." instance=ExtResource("12_wai4o")]
 visible = false
 position = Vector2(464, 176)
 
-[node name="Fire5" parent="." instance=ExtResource("12_h6dln")]
+[node name="Fire5" parent="." instance=ExtResource("12_wai4o")]
 visible = false
 position = Vector2(592, 144)
 
-[node name="Fire6" parent="." instance=ExtResource("12_h6dln")]
+[node name="Fire6" parent="." instance=ExtResource("12_wai4o")]
 visible = false
 position = Vector2(1008, 112)
 
-[node name="Fire7" parent="." instance=ExtResource("12_h6dln")]
+[node name="Fire7" parent="." instance=ExtResource("12_wai4o")]
 visible = false
 position = Vector2(1264, 144)
 
 [node name="Start Position" type="Marker2D" parent="."]
 position = Vector2(104, 216)
 
-[node name="Fire Level Gate" parent="." instance=ExtResource("12_i0hcr")]
+[node name="Fire Level Gate" parent="." instance=ExtResource("13_jmh75")]
 position = Vector2(1856, 144)
 scale = Vector2(5, 5)
 
-[node name="Level Exit" parent="." groups=["exits"] instance=ExtResource("13_i0hcr")]
+[node name="Level Exit" parent="." groups=["exits"] instance=ExtResource("14_p0k5w")]
 position = Vector2(1880, 208)
 
-[node name="Falling Leaves" parent="." instance=ExtResource("16_mp3r7")]
+[node name="Falling Leaves" parent="." instance=ExtResource("15_y6o4d")]
 position = Vector2(664, 0)
 
-[node name="Falling Leaves2" parent="." instance=ExtResource("16_mp3r7")]
+[node name="Falling Leaves2" parent="." instance=ExtResource("15_y6o4d")]
 position = Vector2(1104, 0)
 
-[node name="Falling Leaves3" parent="." instance=ExtResource("16_mp3r7")]
+[node name="Falling Leaves3" parent="." instance=ExtResource("15_y6o4d")]
 position = Vector2(1648, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mp3r7")
 
-[node name="Volcanic Background" parent="." instance=ExtResource("17_m3fo7")]
+[node name="Volcanic Background" parent="." instance=ExtResource("16_jw5q1")]

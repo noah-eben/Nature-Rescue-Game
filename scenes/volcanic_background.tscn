@@ -1,13 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvqyuobay5uub"]
+[gd_scene load_steps=4 format=3 uid="uid://dvqyuobay5uub"]
 
+[ext_resource type="Texture2D" uid="uid://q5nugbi2snes" path="res://sprites/skyOne.png" id="1_ojmpn"]
 [ext_resource type="Texture2D" uid="uid://dicngk5f2c0kk" path="res://sprites/volcanoBackground.png" id="1_vf4sm"]
+[ext_resource type="Texture2D" uid="uid://brtrb0l3wowc6" path="res://sprites/cloudsOne.png" id="2_fwlmw"]
 
 [node name="Volcanic Background" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-z_index = 1
-position = Vector2(488, 152)
+texture = ExtResource("1_ojmpn")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(472, 176)
 texture = ExtResource("1_vf4sm")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+visible = false
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(80, 144)
+texture = ExtResource("2_fwlmw")

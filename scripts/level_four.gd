@@ -3,6 +3,8 @@ extends Node2D
 @onready var lava: TileMapLayer = $Lava
 @onready var water: TileMapLayer = $Water
 
+@onready var next_scene = "res://scenes/levels/level_five.tscn"
+
 @onready var firefighter: CharacterBody2D = $Firefighter
 @onready var start_position: Marker2D = $"Start Position"
 
