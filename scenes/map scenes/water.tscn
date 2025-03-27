@@ -5,7 +5,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puiqx"]
 shader = ExtResource("1_ouspw")
-shader_parameter/scrolling_speed = 0.5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6dln"]
 texture = ExtResource("2_4i45j")

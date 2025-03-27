@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://dddedmolxjvqy"]
+[gd_scene load_steps=14 format=4 uid="uid://dddedmolxjvqy"]
 
 [ext_resource type="Script" uid="uid://cqpdwlyv85k53" path="res://main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://q5nugbi2snes" path="res://sprites/skyOne.png" id="2_wu84c"]
 [ext_resource type="FontFile" uid="uid://dd6f0ua0xgvmv" path="res://fonts/SchoonSquare-Regular.ttf" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dicngk5f2c0kk" path="res://sprites/volcanoBackground.png" id="3_jk1qb"]
 [ext_resource type="StyleBox" uid="uid://c3y1fp05h7brf" path="res://resources/new_style_box_flat.tres" id="4_rtw2f"]
 [ext_resource type="PackedScene" uid="uid://dmwamy3n81oxj" path="res://scenes/falling_leaves.tscn" id="5_8ln24"]
 [ext_resource type="PackedScene" uid="uid://dfyifl36m4wa3" path="res://scenes/map scenes/surfaces.tscn" id="6_oa1go"]
@@ -16,6 +17,12 @@ default_font_size = 48
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
 bg_color = Color(1, 0.835294, 0.254902, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0.101961, 0.478431, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0.101961, 0.478431, 0.243137, 1)
+
 [node name="Main Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -28,6 +35,11 @@ script = ExtResource("1_l6cm7")
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -5
 texture = ExtResource("2_wu84c")
+
+[node name="Volcano" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(328, 336)
+texture = ExtResource("3_jk1qb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -49,12 +61,21 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 68
 text = "Nature Fire Rescue"
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 32
+text = "A game by Noah-Eben"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
@@ -67,6 +88,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme = SubResource("Theme_oa1go")
 theme_override_styles/focus = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jk1qb")
 theme_override_styles/normal = ExtResource("4_rtw2f")
 text = "Play"
 
@@ -76,6 +98,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme = SubResource("Theme_oa1go")
 theme_override_styles/focus = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
 theme_override_styles/normal = ExtResource("4_rtw2f")
 text = "Quit"
 
@@ -93,10 +116,22 @@ z_index = -4
 tile_map_data = PackedByteArray("AAABAAcAAgAAAAEAAAABAAgAAgAAAAIAAAABAAkAAgAAAAMAAAACAAcAAgABAAEAAAACAAgAAgABAAIAAAACAAkAAgABAAMAAAADAAcAAgACAAEAAAADAAgAAgACAAIAAAADAAkAAgACAAMAAAAQAAcAAgAAAAEAAAAQAAgAAgAAAAIAAAAQAAkAAgAAAAMAAAARAAcAAgABAAEAAAARAAgAAgABAAIAAAARAAkAAgABAAMAAAASAAcAAgACAAEAAAASAAgAAgACAAIAAAASAAkAAgACAAMAAAA=")
 
 [node name="Fire" parent="." instance=ExtResource("8_tbmy8")]
-position = Vector2(192, 304)
+position = Vector2(160, 304)
 
 [node name="Fire2" parent="." instance=ExtResource("8_tbmy8")]
-position = Vector2(504, 304)
+position = Vector2(224, 304)
+
+[node name="Fire3" parent="." instance=ExtResource("8_tbmy8")]
+position = Vector2(288, 304)
+
+[node name="Fire4" parent="." instance=ExtResource("8_tbmy8")]
+position = Vector2(352, 304)
+
+[node name="Fire5" parent="." instance=ExtResource("8_tbmy8")]
+position = Vector2(416, 304)
+
+[node name="Fire6" parent="." instance=ExtResource("8_tbmy8")]
+position = Vector2(480, 304)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -19,6 +19,7 @@ extends Node2D
 @onready var total_number_of_fires : int = fires.size()
 
 func _ready() -> void:
+	Global.water_level = Global.max_water_level
 	level_exit.monitorable = false
 	level_exit.visible = false
 	firefighter.position = start_position.position
@@ -33,8 +34,7 @@ func _physics_process(delta: float) -> void:
 	check_cells(delta)
 	show_gate(delta)
 	
-	if Input.is_physical_key_pressed(KEY_R):
-		#revive_player()
+	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 
 func show_gate(delta):
@@ -68,12 +68,4 @@ func check_cells(delta):
 		if data:
 			var tile = data.get_custom_data('type')
 			if tile == 'water':
-				Global.water_level = 100
-
-func revive_player():
-	fire_level_gate.reset_fire()
-	Global.water_level = 100
-	firefighter.reset_firefighter()
-	
-	for fire in fires:
-		fire.reset_fire()
+				Global.water_level = Global.max_water_level

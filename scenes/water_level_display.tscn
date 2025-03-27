@@ -8,7 +8,8 @@
 [node name="Water Level Display" type="TextureProgressBar"]
 offset_right = 16.0
 offset_bottom = 96.0
-value = 60.0
+max_value = 50.0
+value = 50.0
 fill_mode = 3
 texture_under = ExtResource("2_k0o3x")
 texture_progress = ExtResource("3_xppw2")

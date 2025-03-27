@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var area_2d: Area2D = $Area2D
 @onready var health_bar: Node2D = $"Health Bar"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const GREEN_HEALTH_BAR = preload("res://sprites/GreenHealthBar.png")
 
@@ -16,14 +17,10 @@ var UP = Vector2(0, -1)
 
 var motion = Vector2()
 
-var health = 100
+var health = 10
 var is_burning = false
 var is_alive = true
 var facing_right = true
-
-func run_water_timer(delta) -> void:
-	if Global.water_level >= 0:
-		Global.water_level = lerp(Global.water_level, (Global.water_level - 2), delta * 2)
 
 func _ready():
 	health_bar.health_bar.texture_progress = GREEN_HEALTH_BAR
@@ -60,9 +57,8 @@ func _physics_process(delta):
 			var shoot_dir = pos - mouse_pos
 			var shoot_dir_normalized = shoot_dir.normalized()
 			motion.x = lerp(motion.x, shoot_dir_normalized.x * WATERJETFORCE, 1)
-			if position.y > 50:
-				motion.y = lerp(motion.y, (shoot_dir_normalized.y * WATERJETFORCE) + (GRAVITY * delta), 1)
-				run_water_timer(delta)
+			motion.y = lerp(motion.y, (shoot_dir_normalized.y * WATERJETFORCE) + (GRAVITY * delta), 1)
+			run_water_timer(delta)
 			
 		
 		if is_on_floor():
@@ -75,15 +71,17 @@ func _physics_process(delta):
 		motion = velocity
 	burning(delta)
 	dying()
-	
-	#if Input.is_physical_key_pressed(KEY_R):
-		#revive()
+
+func run_water_timer(delta) -> void:
+	print(Global.water_level)
+	Global.water_level -= 2 * delta
 
 func burning(delta):
 	if is_burning == true and health > 0:
 		health -= delta * 2
-		print(health)
-	
+		animation_player.play("flash")
+	else:
+		animation_player.play("RESET")
 
 func dying():
 	if health <= 0 and is_alive == true:

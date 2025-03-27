@@ -15,6 +15,7 @@ offset_top = 51.0
 offset_right = 89.5
 offset_bottom = 91.0
 grow_horizontal = 2
+max_value = 10.0
 texture_under = ExtResource("1_temqn")
 texture_progress = ExtResource("2_orymg")
 script = ExtResource("1_axbfd")

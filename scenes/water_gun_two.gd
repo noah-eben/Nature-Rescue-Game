@@ -2,6 +2,7 @@ extends Node2D
 
 var DROPLET = preload("res://scenes/droplet_two.tscn")
 
+@onready var water_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var stream: Line2D = $RayCast2D/Line2D
 @onready var particles: CPUParticles2D = $RayCast2D/Particles
@@ -10,8 +11,6 @@ var DROPLET = preload("res://scenes/droplet_two.tscn")
 
 func _ready() -> void:
 	stream.points[1] = Vector2.ZERO
-	
-	
 
 func draw_water_stream(delta: float) -> void:
 	particles.position = stream.points[1]
@@ -25,16 +24,21 @@ func draw_water_stream(delta: float) -> void:
 		appear()
 		particles.emitting = true
 		beam_particles.emitting = true
+		if water_sound.playing == false:
+			water_sound.play()
+		
 	elif not raycast.is_colliding() and Input.is_action_pressed("shoot") and Global.water_level > 0:
 		stream.points[1] = Vector2(400, 0)
 		appear()
 		particles.emitting = true
 		beam_particles.emitting = true
+		if water_sound.playing == false:
+			water_sound.play()
 	elif not Input.is_action_pressed("shoot") or Input.is_action_just_released("shoot") or Global.water_level <= 0:
 		disappear()
 		particles.emitting = false
 		beam_particles.emitting = false
-		#stream.points[1] = Vector2.ZERO
+		water_sound.stop()
 
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())

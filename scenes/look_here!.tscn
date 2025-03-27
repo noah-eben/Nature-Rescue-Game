@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://clw0n57yogjtl"]
+
+[ext_resource type="FontFile" uid="uid://dd6f0ua0xgvmv" path="res://fonts/SchoonSquare-Regular.ttf" id="1_ee5ye"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1igdr"]
+font = ExtResource("1_ee5ye")
+
+[node name="Look Here!" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "[Insert Text]"
+label_settings = SubResource("LabelSettings_1igdr")
+
+[node name="Arrow" type="Label" parent="."]
+texture_filter = 1
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 80.0
+offset_bottom = 39.0
+rotation = 1.5708
+text = "->"
+label_settings = SubResource("LabelSettings_1igdr")

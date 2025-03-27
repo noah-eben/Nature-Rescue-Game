@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8qvugb8f4ram"]
+[gd_scene load_steps=8 format=3 uid="uid://b8qvugb8f4ram"]
 
 [ext_resource type="Script" uid="uid://g1dbff052g51" path="res://scenes/water_gun_two.gd" id="1_hv546"]
 [ext_resource type="Texture2D" uid="uid://d30jtcgpbymjx" path="res://sprites/watergun.png" id="2_prlqg"]
 [ext_resource type="Texture2D" uid="uid://b123l8aju2535" path="res://sprites/circle.png" id="3_llah7"]
+[ext_resource type="AudioStream" uid="uid://vo2k3u4nedd1" path="res://audio/Water Hose.mp3" id="4_llah7"]
 
 [sub_resource type="Curve" id="Curve_1n6b1"]
 _data = [Vector2(0.00732601, 1), 0.0, 0.0, 0, 0, Vector2(0.641026, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -57,3 +58,6 @@ color_initial_ramp = SubResource("Gradient_2i20j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_prlqg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_llah7")
